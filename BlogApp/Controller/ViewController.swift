@@ -19,7 +19,7 @@ class ViewController: UIViewController {
             case .success(let articels):
                 self?.articels = articels
                 print("articels: \(self?.articels)")
-                
+                print("hello")
             case .failure(let error):
                 print("error: \(error)")
                 
