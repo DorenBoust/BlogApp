@@ -27,13 +27,22 @@ class ViewController: UIViewController {
 //        }
         
         
-        AuthorAPI.shared.getAuthors { [weak self] (results) in
-            switch results {
-            
-            case .success(let authors):
-                print("authors: \(authors)")
+//        AuthorAPI.shared.getAuthors { [weak self] (results) in
+//            switch results {
+//            
+//            case .success(let authors):
+//                print("authors: \(authors)")
+//            case .failure(let error):
+//                print("error: \(error)")
+//            }
+//        }
+        
+        CategoriesAPI.shared.getCategoriesImages { [weak self] (resultes) in
+            switch resultes {
+            case .success(let categories):
+                print(categories)
             case .failure(let error):
-                print("error: \(error)")
+                print(error)
             }
         }
         

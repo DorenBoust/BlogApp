@@ -13,11 +13,11 @@ struct AuthorAPI {
     private init(){}
     
     //MARK: - properties
-    private let baseAuthorAPI = "https://blogapp.boust.me/wp-json/acf/v3/author_images"
+    private let baseAuthorImagesAPI = "https://blogapp.boust.me/wp-json/acf/v3/author_images"
     
     //MARK: - public func
     public func getAuthors(complited: @escaping (Result<[Author], ArticleErrors>)->Void){
-        guard let getAutherURL = URL(string: self.baseAuthorAPI) else {
+        guard let getAutherURL = URL(string: self.baseAuthorImagesAPI) else {
             complited(.failure(.invalidURL))
             return
         }
