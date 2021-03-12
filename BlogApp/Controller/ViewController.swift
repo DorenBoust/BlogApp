@@ -14,18 +14,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ArticleAPI.shared.getArticals { [weak self] (results) in
+//        ArticleAPI.shared.getArticals { [weak self] (results) in
+//            switch results {
+//            case .success(let articels):
+//                self?.articels = articels
+//                print("articels: \(self?.articels)")
+//                print("hello")
+//            case .failure(let error):
+//                print("error: \(error)")
+//
+//            }
+//        }
+        
+        
+        AuthorAPI.shared.getAuthors { [weak self] (results) in
             switch results {
-            case .success(let articels):
-                self?.articels = articels
-                print("articels: \(self?.articels)")
-                print("hello")
+            
+            case .success(let authors):
+                print("authors: \(authors)")
             case .failure(let error):
                 print("error: \(error)")
-                
             }
         }
-        
         
         
     }

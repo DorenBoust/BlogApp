@@ -60,7 +60,17 @@ struct ArticleAPI {
                     }
                 }
                 
-                articles.append(Article(id: id, date: date, link: link, title: title, content: content, categotys: categories))
+                let acfFieldsJSON = json["acf"] // get here description+innerImage+outerImage+authorName
+                let description = acfFieldsJSON["description"].stringValue
+                let innerImage = acfFieldsJSON["inner_image"].stringValue
+                let outerImage = acfFieldsJSON["outer_image"].stringValue
+                
+                let authorJSON = acfFieldsJSON["author"]
+                let authorDataJSON = authorJSON["data"]
+                let authorName = authorDataJSON["display_name"].stringValue
+                
+                
+                articles.append(Article(id: id, date: date, link: link, title: title, authorName: authorName, description: description, outerImage: outerImage, innerImage: innerImage, content: content, categotys: categories))
             }
             
             complited(.success(articles))

@@ -12,6 +12,10 @@ struct Article {
     let date: String?
     let link: String?
     let title: String?
+    let authorName: String?
+    let description: String?
+    let outerImage: String?
+    let innerImage: String?
     let content: String?
     let categotys: [String]?
 }

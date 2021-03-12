@@ -13,3 +13,10 @@ enum ArticleErrors: String, Error {
     case invalidResponse = "invalidResponse"
     case invalidURL = "invalidURL"
 }
+
+enum AuthorErrors: String, Error {
+    case unableToComplate = "unableToComplate"
+    case invalidData = "invalidData"
+    case invalidResponse = "invalidResponse"
+    case invalidURL = "invalidURL"
+}
