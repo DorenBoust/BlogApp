@@ -7,11 +7,19 @@
 
 import Foundation
 
-enum ArticleErrors: String, Error {
+enum NewArticleErrors: String, Error {
     case unableToComplate = "unableToComplate"
     case invalidData = "invalidData"
     case invalidResponse = "invalidResponse"
     case invalidURL = "invalidURL"
+}
+
+enum ArticelsByCategoryError: String, Error {
+    case unableToComplate = "unableToComplate"
+    case invalidData = "invalidData"
+    case invalidResponse = "invalidResponse"
+    case invalidURL = "invalidURL"
+    case notFoundCategoryName = "notFoundCategoryName"
 }
 
 enum AuthorImagesErrors: String, Error {
@@ -26,4 +34,10 @@ enum CategoriesImagesErrors: String, Error {
     case invalidData = "invalidData"
     case invalidResponse = "invalidResponse"
     case invalidURL = "invalidURL"
+}
+
+enum HomeUpdateErrors: String, Error {
+    case articelsFailed = "articelsFailed"
+    case categoriesFailed = "categoriesFailed"
+    case authorsFailed = "authorsFailed"
 }

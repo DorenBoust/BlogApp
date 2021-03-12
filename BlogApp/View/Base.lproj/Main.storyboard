@@ -1,24 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rqx-dg-sCD">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Bold.ttf">
+            <string>Rubik-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="BlogApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fpF-6t-MLm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="331.33333333333331"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="20" id="cef-aj-heX">
+                                    <size key="itemSize" width="250" height="300"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="50" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCarousel" id="VqZ-mm-i1p" customClass="HomePageCarouselCollectionViewCell" customModule="BlogApp" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="15.666666666666666" width="250" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="chW-MB-IYX">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sportImageCategoryTest" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-KD-rSg">
+                                                    <rect key="frame" x="1" y="0.0" width="250" height="303"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-Xu-125">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם קטגוריה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MK-70-z0B">
+                                                            <rect key="frame" x="135.66666666666666" y="246" width="94.333333333333343" height="24"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="20"/>
+                                                            <color key="textColor" name="whiteColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="categoryImageOverColor"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="1MK-70-z0B" secondAttribute="trailing" constant="20" id="lXs-cm-e0V"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1MK-70-z0B" secondAttribute="bottom" constant="30" id="zwn-SW-3IW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1Ga-KD-rSg" secondAttribute="trailing" id="4JY-2u-6qo"/>
+                                                <constraint firstItem="H2L-Xu-125" firstAttribute="top" secondItem="chW-MB-IYX" secondAttribute="top" id="8uo-XF-BHK"/>
+                                                <constraint firstAttribute="bottom" secondItem="H2L-Xu-125" secondAttribute="bottom" id="GKk-jw-ZhS"/>
+                                                <constraint firstItem="H2L-Xu-125" firstAttribute="leading" secondItem="chW-MB-IYX" secondAttribute="leading" id="SnW-Bn-M4J"/>
+                                                <constraint firstAttribute="trailing" secondItem="H2L-Xu-125" secondAttribute="trailing" id="UAn-lR-3Bd"/>
+                                                <constraint firstAttribute="bottom" secondItem="1Ga-KD-rSg" secondAttribute="bottom" id="ggH-jL-e3w"/>
+                                                <constraint firstItem="1Ga-KD-rSg" firstAttribute="leading" secondItem="chW-MB-IYX" secondAttribute="leading" id="us7-Li-HIS"/>
+                                                <constraint firstItem="1Ga-KD-rSg" firstAttribute="top" secondItem="chW-MB-IYX" secondAttribute="top" id="vXP-M5-28c"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryImageView" destination="1Ga-KD-rSg" id="NyO-CT-g9v"/>
+                                            <outlet property="categoryNameLabel" destination="1MK-70-z0B" id="kvm-Td-xDx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fpF-6t-MLm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eP1-Gf-9xC"/>
+                            <constraint firstItem="fpF-6t-MLm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.45" id="q1n-0A-qM5"/>
+                            <constraint firstItem="fpF-6t-MLm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sgr-6l-8cT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fpF-6t-MLm" secondAttribute="trailing" id="ynH-62-M5n"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="B4g-uH-UAO"/>
+                    <connections>
+                        <outlet property="categoriesCarouselCollectionView" destination="fpF-6t-MLm" id="X0T-yQ-DP3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="713.04347826086962" y="67.633928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="31X-Rp-H43">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rqx-dg-sCD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y2v-qT-JIl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nmA-oO-Fdz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdC-Nh-ETP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="67.633928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sportImageCategoryTest" width="686" height="386"/>
+        <namedColor name="categoryImageOverColor">
+            <color red="0.35199999809265137" green="0.35199999809265137" blue="0.35199999809265137" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="0.81999999284744263" green="0.83899998664855957" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
